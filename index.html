@@ -2,67 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thomas Katsaitis - Portfolio & Blog</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thomas Katsaitis | Website</title>
+  <link rel="stylesheet" href="st.css" />
 </head>
 <body>
-  <header>
-    <h1>Thomas</h1>
-    <nav>
-      <ul>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav id="navbar" class="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Brand (Logo and Name) -->
+        <a href="#hero" class="brand">
+          <img src="images/Mime-logo.svg" alt="Logo" />
+          <div class="brand-text">Thomas Katsaitis</div>
+        </a>
 
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="projects">
-      <article class="project">
-        <h3>Project Title 1</h3>
-        <p>A brief description of your project. <a href="#">View project</a></p>
-      </article>
-      <article class="project">
-        <h3>Project Title 2</h3>
-        <p>Another brief description. <a href="#">View project</a></p>
-      </article>
-      <!-- Add more projects here -->
+        <!-- Desktop Navigation -->
+        <div class="desktop-menu">
+          <a href="#hero" class="nav-link">Home</a>
+          <a href="/resume" class="nav-link">About</a>
+          <a href="/blog" class="nav-link">Blog</a>
+          <a href="/projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-button" class="mobile-menu-button" aria-label="Toggle menu">
+          <span id="menu-icon">&#9776;</span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <!-- For anchor links, the onclick adds the 'hidden' class to close the menu -->
+        <a href="#hero" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+        <a href="/resume" class="mobile-nav-link">About</a>
+        <a href="/blog" class="mobile-nav-link">Blog</a>
+        <a href="/projects" class="mobile-nav-link">Projects</a>
+        <a href="#contact" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+      </div>
     </div>
-  </section>
+  </nav>
 
-  <section id="blog">
-    <h2>Blog</h2>
-    <div class="posts">
-      <article class="post">
-        <h3>Blog Post 1</h3>
-        <p><small>May 31, 2025</small></p>
-        <p>A short intro to the blog post. <a href="#">Read more</a></p>
-      </article>
-      <article class="post">
-        <h3>Blog Post 2</h3>
-        <p><small>May 15, 2025</small></p>
-        <p>Another blog post snippet. <a href="#">Read more</a></p>
-      </article>
-      <!-- Add more blog posts here -->
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi! I'm Thomas, a Mathemtics Student with a deep fasination with building code and observing the beauty that can be created via equations. Welcome to my portfolio and blog!
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Thomas Katsaitis</p>
-    <p>
-      <a href="https://github.com/tkatsai" target="_blank">GitHub</a> |
-      <a href="https://linkedin.com/in/thomaskatsaitis" target="_blank">LinkedIn</a>
-    </p>
-  </footer>
+  <!-- Dummy content for scrolling and testing the navbar behavior -->
+    <section class="hero">
+      <div class="container">
+        <div class="animate-fade-in">
+          <h1>Thomas Katsaitis</h1>
+          <p class="subheading">Mathematics Student &amp; Coder</p>
+          <p class="description">
+            Passionate about exploring the different worlds that maths can show us, and seeing how thoses diffent worlds can be visualied.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="about-section">
+      <div class="container">
+        <div class="content">
+          <h2>About Me</h2>
+          <div class="grid">
+            <div class="text-content">
+              <p>
+                With over 5 years of experience in coding, I've had the privilege of working
+                with startups and established companies to bring their digital visions to life.
+              </p>
+              <p>
+                I'm passionate about clean code, user experience, and staying up-to-date with the
+                latest technologies. When I'm not coding, you'll find me exploring new frameworks,
+                contributing to open source, or mentoring fellow developers.
+              </p>
+              <div class="button-wrapper">
+                <a href="/resume" class="btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="external-link-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M18 13v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2v-6M15 3h6v6m-3-3L10 14"
+                    />
+                  </svg>
+                  View Personal Portfolio
+                </a>
+              </div>
+            </div>
+            <div class="profile-image">
+              <span>Profile Image Placeholder</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="blog-section">
+      <div class="container">
+        <div class="content">
+          <h2>Latest Blog Posts</h2>
+          <div id="blogGrid" class="grid"></div>
+          <div class="all-posts-btn-wrapper">
+            <button id="viewAllPosts" class="btn outline">View All Posts</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="projects-section">
+      <div class="container">
+        <div class="content">
+          <h2>Featured Projects</h2>
+          <div id="projectGrid" class="grid"></div>
+          <div class="view-all">
+            <a href="/projects" class="btn outline btn-lg">View All Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Get in Touch Section -->
+          <div class="get-in-touch">
+            <h2>Get in Touch</h2>
+            <p class="intro">
+              Ready to bring your next project to life? I'd love to hear from you.
+              Let's discuss how we can work together to create something amazing.
+            </p>
+            <!-- Contact Info -->
+            <div class="contact-grid">
+              <div class="contact-item">
+                <div class="icon">
+                  <!-- Mail Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect>
+                    <polyline points="3,4 12,13 21,4"></polyline>
+                  </svg>
+                </div>
+                <h3>Email</h3>
+                <span>katsaitisthomas@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <div class="icon">
+                  <!-- Phone Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-2.58 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-2.58-8.63A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72 
+                    12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 
+                    12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <h3>Phone</h3>
+                <span>beeeeeep</span>
+              </div>
+              <div class="contact-item">
+                <div class="icon">
+                  <!-- MapPin Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3>Location</h3>
+                <span>Swansea, Wales</span>
+              </div>
+            </div>
+            <!-- Social Media -->
+            <div class="social-media">
+              <a href="https://github.com/tkatsai" target="_blank" rel="noopener noreferrer" class="social-link">
+                <button class="btn social-btn github-btn">
+                  <!-- Github Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.111.793-.261.793-.578 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.746.082-.73.082-.73 1.205.084 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.605-2.665-.3-5.467-1.335-5.467-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 
+                    0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.006-.404 11.5 11.5 0 0 1 3.006.404c2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 
+                    1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.48 5.92.432.37.816 1.096.816 2.21 0 1.595-.014 2.882-.014 3.275 0 .319.192.694.8.576C20.565 
+                    21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </button>
+              </a>
+              <a href="https://linkedin.com/in/thomaskatsaitis" target="_blank" rel="noopener noreferrer" class="social-link">
+                <button class="btn social-btn linkedin-btn">
+                  <!-- Linkedin Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </div>
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="copyright">
+              © 2025 Thomas Katsaitis. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script src="sc.js"></script>
 </body>
 </html>
